@@ -1,6 +1,6 @@
+const HealthBar = require("./healthbar");
 const Util = require("./util");
 
-//const S_DIM = 86; //attackSprite dimensions (square)
 const WIDTH = 90;
 const HEIGHT = 80;
 
@@ -8,28 +8,23 @@ class Player {
 
     constructor() {
         this.health = 100;
-        this.attackSpeed = 25;
+        this.attackSpeed = 5;
+        this.attackTimer = 0;
         this.damage = 5;
         //armor
         //lifesteal
         this.pos = [20,290];
 
+        this.healthBar = new HealthBar(this.health,this.pos);
+
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/player/Animated Pixel Knight/knight-sprite-sheet.png";
 
-        // this.attackSprite = new Image();
-        // this.attackSprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/player/Knight_1/Attack 1.png"
         this.attackLoop = [0,1,2,3,4];
         this.attackIndex = 0;
         
-        // this.idleSprite = new Image();
-        // this.idleSprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/player/Knight_1/Idle.png";
         this.idleLoop = [1,2,3,4];
         this.idleIndex = 0;
-    }
-
-    draw(ctx) {
-        
     }
 
     animateAttack() {
@@ -44,12 +39,25 @@ class Player {
         if (this.idleIndex >= this.idleLoop.length) this.idleIndex = 0;
     }
 
+    canAttack() {
+        this.attackTimer++;
+        if (this.attackTimer === this.attackSpeed) {
+            this.attackTimer = 0;
+            return true;
+        }
+        return false;
+    }
+
     attack(target) {
-        let damage = Util.getRandomInt(this.damage-5,this.damage+1);
-        target.health -= damage;
+        let damage = this.damage + Util.getRandomInt(this.damage-5,this.damage+1);
+        target.takeDamage(damage);
         return damage;
     }
 
+    takeDamage(dmg) {
+        this.health -= dmg;
+        this.healthBar.subtractHealth(dmg);
+    }
 }
 
 module.exports = Player;

@@ -1,6 +1,7 @@
 const Player = require("./player.js");
 const Enemy = require("./enemy.js");
 const Rat = require("./rat.js");
+const HealthBar = require("./healthbar");
 
 const DIM_X = 700; //canvas width
 const DIM_Y = 400; //canvas height
@@ -24,7 +25,7 @@ class Game {
         this.spawnTimer = SPAWN_TIMER;
     }
 
-    draw(ctx,frame,callback) {
+    draw(ctx) {
         ctx.clearRect(0,0,DIM_X,DIM_Y);
 
         //draw background
@@ -34,9 +35,9 @@ class Game {
         ctx.drawImage(this.bg4,0,0,DIM_X,DIM_Y);
 
         //draw player
+        this.player.healthBar.draw(this.player.pos);
         if (this.canFight()) {
             this.player.animateAttack();
-            this.enemies
         } else {
             this.player.animateIdle();
         }
@@ -69,7 +70,6 @@ class Game {
     }
 
     spawnAnEnemy() {
-        //console.log(this.spawnTimer);
         if (this.spawnTimer < 1) {
             let enemy = new Rat([650,330]);
             this.enemies.push(enemy);
@@ -82,16 +82,17 @@ class Game {
     resolveAttacks() {
         //combat only starts if an enemy is next to the player, ie at the divider
         if (this.canFight()) {
-            this.player.animateAttack();
-           //if (this.time % this.player.attackSpeed === 0) console.log(`Player deals ${this.player.attack(this.enemies[0])} damage!`);
 
-            //if (this.time % this.enemies[0].attackSpeed === 0) console.log(`Enemy deals ${this.enemies[0].attack(this.player)} damage!`);
+            //player attacks
+            if (this.player.canAttack()) console.log(`Player deals ${this.player.attack(this.enemies[0])} damage!`);
+
+            //enemy attacks
+            if (this.enemies[0].canAttack()) console.log(`Enemy deals ${this.enemies[0].attack(this.player)} damage!`);
             
             //kill enemy or player if their health goes sub 0
+            //enemy health handled in their draw method
             if (this.player.health <= 0) {
                 this.gameOver();
-            } else if (this.enemies[0].health <= 0) {
-                this.enemies.shift();
             }
         }
     }

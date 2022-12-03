@@ -1,4 +1,5 @@
 const Enemy = require("./enemy");
+const HealthBar = require("./healthbar");
 
 const WIDTH = 42;
 const HEIGHT = 22;
@@ -8,6 +9,7 @@ class Rat extends Enemy {
 
     constructor(pos) {
         super(pos);
+
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
 
@@ -22,12 +24,14 @@ class Rat extends Enemy {
 
         this.idleLoop = [0,1,2,3];
         this.idleIndex = 0;
-        console.log(`created rat with pos: ${pos}`)
     }
 
     draw(enemies,i) {
-        if (i === 0 && this.pos[0] <= 100) {
-            this.attack();
+        this.healthBar.draw(this.pos);
+        if (this.health <= 0) {
+            this.die(enemies);
+        } else if (i === 0 && this.pos[0] <= 100) {
+            this.animateAttack();
         } else if (i > 0 && enemies[i-1].pos[0] > enemies[i].pos[0] + BUFFER) {
             this.walk();
         } else {
@@ -41,7 +45,7 @@ class Rat extends Enemy {
         if (this.walkIndex >= this.walkLoop.length) this.walkIndex = 0;
     }
 
-    attack() {
+    animateAttack() {
         ctx.drawImage(this.sprite,WIDTH * this.attackLoop[this.attackIndex], HEIGHT * 2, WIDTH, HEIGHT, this.pos[0], this.pos[1], WIDTH*2, HEIGHT*2);
         this.attackIndex++;
         if (this.attackIndex >= this.attackLoop.length) this.attackIndex = 0;
@@ -53,10 +57,14 @@ class Rat extends Enemy {
         if (this.idleIndex >= this.idleLoop.length) this.idleIndex = 0;
     }
 
-    die() {
+    die(enemies) {
         ctx.drawImage(this.sprite,WIDTH * this.dieLoop[this.dieIndex], HEIGHT * 5, WIDTH, HEIGHT, this.pos[0], this.pos[1], WIDTH*2, HEIGHT*2);
         this.dieIndex++;
-        if (this.dieIndex >= this.dieLoop.length) this.dieIndex = 0;
+        if (this.dieIndex >= this.dieLoop.length) {
+            this.dieIndex = 0;
+            console.log(`The rat dies`);
+            enemies.shift();
+        }
     }
 
 }
