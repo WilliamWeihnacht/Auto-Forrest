@@ -8,7 +8,8 @@ const BUFFER = 50; //space between enemies
 class Rat extends Enemy {
 
     constructor(pos) {
-        super(pos);
+        //health: 10, attackSpeed: 5, damage: 5, pos: pos, moveSpeed: 10
+        super(10,5,5,pos,10);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";

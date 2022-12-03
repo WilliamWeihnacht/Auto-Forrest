@@ -17,7 +17,7 @@ class GameView {
 
     step() {
         this.frame++;
-        if (this.frame < 15) {
+        if (this.frame < 10) {
             window.requestAnimationFrame(this.step.bind(this));
             return;
         }

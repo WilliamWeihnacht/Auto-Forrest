@@ -48,8 +48,7 @@ class Game {
         }
     }
 
-    step(frame) {
-        //console.log(frame);
+    step() {
         this.spawnAnEnemy();
         this.moveEnemies();
         this.resolveAttacks();
@@ -63,7 +62,7 @@ class Game {
                     this.enemies[0].move();
                 }
             //make sure they can't pass enemies in front of them
-            } else if (this.enemies[i].pos[0] - this.enemies[i].speed > this.enemies[i-1].pos[0] + BUFFER) {
+            } else if (this.enemies[i].pos[0] - this.enemies[i].moveSpeed > this.enemies[i-1].pos[0] + BUFFER) {
                 this.enemies[i].move();
             }
         }
