@@ -8,8 +8,8 @@ const BUFFER = 50; //space between enemies
 class Rat extends Enemy {
 
     constructor(pos) {
-        //health: 10, attackSpeed: 5, damage: 5, pos: pos, moveSpeed: 10
-        super(10,5,5,pos,10);
+        //health: 10, attackSpeed: 5, damage: 5, pos: pos, moveSpeed: 10, xpGranted: 10
+        super(10,5,5,pos,10,10);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
@@ -27,10 +27,10 @@ class Rat extends Enemy {
         this.idleIndex = 0;
     }
 
-    draw(enemies,i) {
+    draw(enemies,i,player) {
         this.healthBar.draw(this.pos);
         if (this.health <= 0) {
-            this.die(enemies);
+            this.die(enemies,player);
         } else if (i === 0 && this.pos[0] <= 100) {
             this.animateAttack();
         } else if (i > 0 && enemies[i-1].pos[0] > enemies[i].pos[0] + BUFFER) {
@@ -58,12 +58,15 @@ class Rat extends Enemy {
         if (this.idleIndex >= this.idleLoop.length) this.idleIndex = 0;
     }
 
-    die(enemies) {
+    die(enemies,player) {
         ctx.drawImage(this.sprite,WIDTH * this.dieLoop[this.dieIndex], HEIGHT * 5, WIDTH, HEIGHT, this.pos[0], this.pos[1], WIDTH*2, HEIGHT*2);
         this.dieIndex++;
         if (this.dieIndex >= this.dieLoop.length) {
-            this.dieIndex = 0;
-            console.log(`The rat dies`);
+
+            //remove the rat from enemies once it's death animation ends
+            //this.dieIndex = 0;
+            console.log(`The rat dies granting ${this.xpGranted} xp`);
+            this.grantXP(player);
             enemies.shift();
         }
     }
