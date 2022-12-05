@@ -1,5 +1,4 @@
 const Enemy = require("./enemy");
-const HealthBar = require("./healthbar");
 
 const WIDTH = 42;
 const HEIGHT = 22;
@@ -8,7 +7,7 @@ const BUFFER = 50; //space between enemies
 class Rat extends Enemy {
 
     constructor(pos) {
-        //health: 10, hitChance: .5, damage: 2, armor: 0, pos: pos, name: Rat, moveSpeed: 10, xpGranted: 10
+        //health: 10, hitChance: .5, damage: 3, armor: 0, pos: pos, name: Rat, moveSpeed: 10, xpGranted: 10
         super(10,.5,3,0,pos,"Rat",10,10);
 
         this.sprite = new Image();

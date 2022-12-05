@@ -1,9 +1,11 @@
 class Item {
 
-    constructor(healthGranted, damageGranted, hitChanceGranted, name, img) {
+    constructor(healthGranted, damageGranted, hitChanceGranted, armorGranted, lifeStealGranted, name, img) {
         this.healthGranted = healthGranted;
         this.damageGranted = damageGranted;
         this.hitChanceGranted = hitChanceGranted;
+        this.armorGranted = armorGranted;
+        this.lifeStealGranted = lifeStealGranted;
         this.name = name;
         this.img = img;
     }
@@ -15,6 +17,8 @@ class Item {
         player.healthBar.curHealth += this.healthGranted;
         player.damage += this.damageGranted;
         player.hitChance += this.hitChanceGranted;
+        player.armor += this.armorGranted;
+        player.lifeSteal += this.lifeStealGranted;
     }
 }
 

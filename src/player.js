@@ -6,8 +6,8 @@ const HEIGHT = 80;
 class Player extends Character {
 
     constructor(name = "Player") {
-        //health: 100, hitChance: .7, damage: 5, armor: 0, pos: [20,290]
-        super(100,.7,5,0,[20,290],name);
+        //health: 200, hitChance: .7, damage: 5, armor: 0, pos: [20,290]
+        super(200,.7,5,0,[20,290],name);
         this.level = 0;
         this.xp = 0;
         

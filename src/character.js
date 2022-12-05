@@ -18,9 +18,21 @@ class Character {
     attack(target) {
         //let damage = this.damage + Util.getRandomInt(this.damage-5,this.damage+1);
         //let damage = Math.floor(this.damage * 1.5) - target.armor;
-        let damage = this.damage - target.armor;
+        let damage = Math.max(this.damage - target.armor,1);
         target.takeDamage(damage);
+        this.heal(Math.ceil(this.lifeSteal * damage));
         return damage;
+    }
+
+    heal(hp) {
+        if (this.currHealth + hp > this.maxHealth) {
+            this.currHealth = this.maxHealth;
+            this.healthBar.setHealth(this.maxHealth)
+        } else {   
+            this.currHealth += hp;
+            this.healthBar.addHealth(hp);
+        }
+        if (hp > 0) console.log(`${this.name} heals for ${hp}.`);
     }
 
     takeDamage(dmg) {

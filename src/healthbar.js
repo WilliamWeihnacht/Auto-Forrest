@@ -22,11 +22,15 @@ class HealthBar {
         this.curHealth -= health;
     }
 
+    addHealth(health) {
+        this.curHealth += health;
+    }
+
     setHealth(health) {
         this.curHealth = health;
     }
 
-    
+
 }
 
 module.exports = HealthBar;
