@@ -1,4 +1,3 @@
-
 const Util = {
     getRandomInt(min, max) {
         min = Math.ceil(min);

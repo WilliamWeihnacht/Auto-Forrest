@@ -23,7 +23,11 @@ class GameView {
     }
 
     pause() {
-        this.paused = !this.paused;
+        this.paused = true;
+    }
+
+    play() {
+        this.paused = false;
     }
 
     toggleSpeed() {

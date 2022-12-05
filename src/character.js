@@ -5,7 +5,7 @@ class Character {
 
     constructor(health,attackSpeed,damage,pos) {
         this.health = health;
-        this.attackSpeed = attackSpeed;
+        this.attackSpeed = attackSpeed;//change to hit chance
         this.attackTimer = 0;
         this.damage = damage;
         //armor

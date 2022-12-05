@@ -2,6 +2,7 @@ const Player = require("./player.js");
 const Enemy = require("./enemy.js");
 const Rat = require("./rat.js");
 const HealthBar = require("./healthbar");
+const ItemManager = require("./item_manager.js");
 
 const DIM_X = 700; //canvas width
 const DIM_Y = 400; //canvas height
@@ -14,6 +15,7 @@ class Game {
     constructor(gameView) {
         this.player = new Player();
         this.enemies = [];
+        this.itemManager = new ItemManager();
 
         //load background imgs
         this.bg1 = new Image();
@@ -26,7 +28,7 @@ class Game {
         this.bg4.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/background/DarkForest/DarkForest_Foreground.png";
         this.spawnTimer = SPAWN_DELAY;
 
-        //allows pause/speed up
+        //allows pause/speed up from within game class
         this.gameView = gameView;
     }
 
@@ -123,24 +125,40 @@ class Game {
 
         this.gameView.pause();
 
-        //TODO add items to overlay
-
         const overlay = document.getElementById("overlay");
+        
+        let items = this.itemManager.get3RandomItems();
+
+        document.getElementById("item1-pic").src = items[0].img;
+        document.getElementById("item2-pic").src = items[1].img;
+        document.getElementById("item3-pic").src = items[2].img;
+
+        document.getElementById("item1-button").innerHTML = items[0].name;
+        document.getElementById("item2-button").innerHTML = items[1].name;
+        document.getElementById("item3-button").innerHTML = items[2].name;
+
         overlay.style.display = "block";
+
+        function itemChosen(item) {
+            item.applyStats(this.player);
+            overlay.style.display = "none";
+            this.gameView.play(); //figure out why the 2nd level up causes the game to say paused
+        }
 
         const button1 = document.getElementById("item1-button");
         button1.addEventListener("click",()=>{
-            //give player the item
-            console.log("clicked b1");
-            overlay.style.display = "none";
-            this.gameView.pause();
+            itemChosen.bind(this)(items[0]);
         });
 
         const button2 = document.getElementById("item2-button");
+        button2.addEventListener("click",()=>{
+            itemChosen.bind(this)(items[1]);
+        });
 
         const button3 = document.getElementById("item3-button");
-        
-
+        button3.addEventListener("click",()=>{
+            itemChosen.bind(this)(items[2]);
+        });
     }
 
 }
