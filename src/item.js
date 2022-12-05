@@ -1,17 +1,20 @@
 class Item {
 
-    constructor(healthGranted, damageGranted, attackSpeedGranted, name, img) {
+    constructor(healthGranted, damageGranted, hitChanceGranted, name, img) {
         this.healthGranted = healthGranted;
         this.damageGranted = damageGranted;
-        this.attackSpeedGranted = attackSpeedGranted;
+        this.hitChanceGranted = hitChanceGranted;
         this.name = name;
         this.img = img;
     }
 
     applyStats(player) {
-        player.health += this.healthGranted;
+        player.maxHealth += this.healthGranted;
+        player.currHealth += this.healthGranted;
+        player.healthBar.maxHealth += this.healthGranted;
+        player.healthBar.curHealth += this.healthGranted;
         player.damage += this.damageGranted;
-        player.attackSpeed += this.attackSpeedGranted;
+        player.hitChance += this.hitChanceGranted;
     }
 }
 

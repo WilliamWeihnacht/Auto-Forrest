@@ -3,38 +3,39 @@ const HealthBar = require("./healthbar");
 
 class Character {
 
-    constructor(health,attackSpeed,damage,pos) {
-        this.health = health;
-        this.attackSpeed = attackSpeed;//change to hit chance
-        this.attackTimer = 0;
+    constructor(maxHealth,hitChance,damage,armor,pos,name) {
+        this.maxHealth = maxHealth;
+        this.currHealth = maxHealth;
+        this.hitChance = hitChance;
         this.damage = damage;
-        //armor
-        //lifesteal
+        this.armor = armor;
+        this.lifeSteal = 0;
         this.pos = pos;
-
-        this.healthBar = new HealthBar(this.health,this.pos);
+        this.name = name;
+        this.healthBar = new HealthBar(this.maxHealth,this.pos);
     }
 
     attack(target) {
-        let damage = this.damage + Util.getRandomInt(this.damage-5,this.damage+1);
+        //let damage = this.damage + Util.getRandomInt(this.damage-5,this.damage+1);
+        //let damage = Math.floor(this.damage * 1.5) - target.armor;
+        let damage = this.damage - target.armor;
         target.takeDamage(damage);
         return damage;
     }
 
     takeDamage(dmg) {
-        this.health -= dmg;
+        this.currHealth -= dmg;
         this.healthBar.subtractHealth(dmg);
     }
 
-    canAttack() {
-        this.attackTimer++;
-        if (this.attackTimer === this.attackSpeed) {
-            this.attackTimer = 0;
+    attackHits() {
+        if (Math.random() < this.hitChance) {
             return true;
+        } else {
+            console.log(`${this.name} misses!`);
+            return false;
         }
-        return false;
     }
-
 }
 
 module.exports = Character;

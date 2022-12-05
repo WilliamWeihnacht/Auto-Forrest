@@ -5,9 +5,9 @@ const HEIGHT = 80;
 
 class Player extends Character {
 
-    constructor() {
-        //health: 100, attackSpeed: 5, damage: 5, pos: [20,290]
-        super(100,5,5,[20,290]);
+    constructor(name = "Player") {
+        //health: 100, hitChance: .7, damage: 5, armor: 0, pos: [20,290]
+        super(100,.7,5,0,[20,290],name);
         this.level = 0;
         this.xp = 0;
         
@@ -19,6 +19,8 @@ class Player extends Character {
         
         this.idleLoop = [1,2,3,4];
         this.idleIndex = 0;
+
+        console.log(this);
     }
 
     animateAttack() {

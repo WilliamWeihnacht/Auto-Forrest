@@ -2,8 +2,8 @@ const Character = require("./character");
 
 class Enemy extends Character {
 
-    constructor(health,attackSpeed,damage,pos,moveSpeed,xpGranted) {
-        super(health,attackSpeed,damage,pos);
+    constructor(maxHealth,hitChance,damage,armor,pos,name,moveSpeed,xpGranted) {
+        super(maxHealth,hitChance,damage,armor,pos,name);
         this.moveSpeed = moveSpeed;
         this.xpGranted = xpGranted;
         this.alive = true;

@@ -16,6 +16,7 @@ class Game {
         this.player = new Player();
         this.enemies = [];
         this.itemManager = new ItemManager();
+        this.combatCounter = 0;
 
         //load background imgs
         this.bg1 = new Image();
@@ -92,18 +93,24 @@ class Game {
 
     //
     resolveAttacks() {
+
+        //attacks should only occur every 4 frames to line up with the player's attacck
+        this.combatCounter++;
+        if (this.combatCounter < 5) return;
+        this.combatCounter = 0;
+
         //combat only starts if an enemy is next to the player, ie at the divider
         if (this.canFight()) {
 
             //player attacks
-            if (this.player.canAttack()) console.log(`Player deals ${this.player.attack(this.enemies[0])} damage!`);
+            if (this.player.attackHits()) console.log(`${this.player.name} deals ${this.player.attack(this.enemies[0])} damage!`);
 
             //enemy attacks
-            if (this.enemies[0].canAttack()) console.log(`Enemy deals ${this.enemies[0].attack(this.player)} damage!`);
+            if (this.enemies[0].attackHits()) console.log(`${this.enemies[0].name} deals ${this.enemies[0].attack(this.player)} damage!`);
 
             //kill player if their health goes sub 0
             //enemy health handled in their draw method
-            if (this.player.health <= 0) {
+            if (this.player.currHealth <= 0) {
                 this.gameOver();
             }
         }
@@ -115,13 +122,18 @@ class Game {
     }
 
     gameOver() {
-        //alert("game over");
+        this.gameView.pause();
+        alert("game over");
     }
 
     levelUp() {
-        console.log("Player leveled up!");
+        console.log(`${this.player.name} leveled up!`);
         this.player.level++;
         this.player.xp = 0;
+
+        //give player full health on level up
+        // this.player.currHealth = this.player.maxHealth;
+        // this.player.healthBar.setHealth(this.player.maxHealth);
 
         this.gameView.pause();
 
@@ -129,20 +141,23 @@ class Game {
         
         let items = this.itemManager.get3RandomItems();
 
+        //display item images
         document.getElementById("item1-pic").src = items[0].img;
         document.getElementById("item2-pic").src = items[1].img;
         document.getElementById("item3-pic").src = items[2].img;
 
+        //name item buttons appropriately
         document.getElementById("item1-button").innerHTML = items[0].name;
         document.getElementById("item2-button").innerHTML = items[1].name;
         document.getElementById("item3-button").innerHTML = items[2].name;
 
+        //show the items overlay
         overlay.style.display = "block";
 
         function itemChosen(item) {
             item.applyStats(this.player);
             overlay.style.display = "none";
-            this.gameView.play(); //figure out why the 2nd level up causes the game to say paused
+            this.gameView.play();
         }
 
         const button1 = document.getElementById("item1-button");

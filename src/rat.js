@@ -8,8 +8,8 @@ const BUFFER = 50; //space between enemies
 class Rat extends Enemy {
 
     constructor(pos) {
-        //health: 10, attackSpeed: 5, damage: 5, pos: pos, moveSpeed: 10, xpGranted: 10
-        super(10,5,5,pos,10,10);
+        //health: 10, hitChance: .5, damage: 2, armor: 0, pos: pos, name: Rat, moveSpeed: 10, xpGranted: 10
+        super(10,.5,3,0,pos,"Rat",10,10);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
@@ -29,7 +29,7 @@ class Rat extends Enemy {
 
     draw(enemies,i,player) {
         this.healthBar.draw(this.pos);
-        if (this.health <= 0) {
+        if (this.currHealth <= 0) {
             this.die(enemies,player);
         } else if (i === 0 && this.pos[0] <= 100) {
             this.animateAttack();

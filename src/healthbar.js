@@ -21,6 +21,12 @@ class HealthBar {
     subtractHealth(health) {
         this.curHealth -= health;
     }
+
+    setHealth(health) {
+        this.curHealth = health;
+    }
+
+    
 }
 
 module.exports = HealthBar;

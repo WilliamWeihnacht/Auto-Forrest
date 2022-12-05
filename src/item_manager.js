@@ -12,11 +12,11 @@ class ItemManager {
         const hpUp = new Item(25,0,0,"Health Up","/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_12.png");
         this.items.push(hpUp);
 
-        const dmgUp = new Item(0,5,0,"Damage Up","/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_3.png");
+        const dmgUp = new Item(0,1,0,"Damage Up","/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_3.png");
         this.items.push(dmgUp);
 
-        const attackSpeedUp = new Item(0,0,-1,"Attack Speed Up","/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_11.png");
-        this.items.push(attackSpeedUp);
+        const hitChanceUp = new Item(0,0,.05,"Hit Chance Up","/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_11.png");
+        this.items.push(hitChanceUp);
     }
 
     get3RandomItems() {
