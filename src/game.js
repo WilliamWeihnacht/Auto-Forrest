@@ -35,6 +35,18 @@ class Game {
 
         //allows pause/speed up from within game class
         this.gameView = gameView;
+
+        function itemChosen(item) {
+            item.applyStats(this.player);
+            document.getElementById("overlay").style.display = "none";
+            this.gameView.play();
+        }
+
+        this.threeItems = this.itemManager.get3RandomItems();
+
+        this.event1 = (e)=>{itemChosen.bind(this)(this.threeItems[0])}
+        this.event2 = (e)=>{itemChosen.bind(this)(this.threeItems[1])}
+        this.event3 = (e)=>{itemChosen.bind(this)(this.threeItems[2])}
     }
 
     //animate a frame of the game
@@ -161,71 +173,34 @@ class Game {
 
         this.gameView.pause();
         
-        let threeItems = this.itemManager.get3RandomItems();
-        console.log(threeItems);
+        this.threeItems = this.itemManager.get3RandomItems();
 
         //display item images
-        document.getElementById("item1-pic").src = threeItems[0].img;
-        document.getElementById("item2-pic").src = threeItems[1].img;
-        document.getElementById("item3-pic").src = threeItems[2].img;
+        document.getElementById("item1-pic").src = this.threeItems[0].img;
+        document.getElementById("item2-pic").src = this.threeItems[1].img;
+        document.getElementById("item3-pic").src = this.threeItems[2].img;
 
-        //name item buttons appropriately
+        //change button names
         const button1 = document.getElementById("item1-button");
-        button1.innerHTML = threeItems[0].name;
-        button1.addEventListener("click",(e)=>{
-            //e.stopImmediatePropagation();
-            console.log("B1 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            console.log(threeItems[0]);
-            console.log(threeItems);
-            console.log(this);
-            overlay.style.display = "none";
-            threeItems[0].applyStats(this.player);
-            this.gameView.play();
-        });
-
+        button1.innerHTML = this.threeItems[0].name;
         const button2 = document.getElementById("item2-button");
-        button2.innerHTML = threeItems[1].name;
-        button2.addEventListener("click",(e)=>{
-            e.stopImmediatePropagation();
-            console.log("B2 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            console.log(threeItems[1]);
-            overlay.style.display = "none";
-            threeItems[1].applyStats(this.player);
-            this.gameView.play();
-        });
-
+        button2.innerHTML = this.threeItems[1].name;
         const button3 = document.getElementById("item3-button");
-        button3.innerHTML = threeItems[2].name;
-        button3.addEventListener("click",(e)=>{
-            e.stopImmediatePropagation();
-            console.log("B3 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            console.log(threeItems[2]);
-            overlay.style.display = "none";
-            threeItems[2].applyStats(this.player);
-            this.gameView.play();
-        });
+        button3.innerHTML = this.threeItems[2].name;
 
         //show the items overlay
         const overlay = document.getElementById("overlay");
         overlay.style.display = "block";
-
-        // function itemChosen(item) {
-        //     item.applyStats(this.player);
-        //     overlay.style.display = "none";
-        //     this.gameView.play();
-        // }
-
         
-        // button1.addEventListener("click",()=>{
-        //     itemChosen.bind(this)(items[0]);
-        // });
+        //give each button a fresh event listener
+        button1.removeEventListener("click",this.event1);
+        button1.addEventListener("click",this.event1);
+        
+        button2.removeEventListener("click",this.event2);
+        button2.addEventListener("click",this.event2);
 
-        
-
-        
-        
-
-        
+        button3.removeEventListener("click",this.event3);
+        button3.addEventListener("click",this.event3);
     }
 
 }

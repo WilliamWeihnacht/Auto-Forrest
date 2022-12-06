@@ -16,7 +16,9 @@ class GameView {
             return;
         }
         this.frame = 0;
-        if (!this.paused) this.game.step(this.frame);
+        if (!this.paused) {
+            this.game.step(this.frame);
+        }
         this.game.draw(ctx,this.frame,this.step.bind(this));
         window.requestAnimationFrame(this.step.bind(this));
     }
