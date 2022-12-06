@@ -3,6 +3,7 @@ const Enemy = require("./enemy.js");
 const Rat = require("./rat.js");
 const HealthBar = require("./healthbar");
 const ItemManager = require("./item_manager.js");
+const Satyr = require("./satyr.js");
 
 const DIM_X = 700; //canvas width
 const DIM_Y = 400; //canvas height
@@ -83,7 +84,7 @@ class Game {
     //create a new enemy every SPAWN_DELAY frames
     spawnAnEnemy() {
         if (this.spawnTimer < 1) {
-            let enemy = new Rat([650,330]);
+            let enemy = new Rat();
             this.enemies.push(enemy);
             this.spawnTimer = SPAWN_DELAY;
         } else {

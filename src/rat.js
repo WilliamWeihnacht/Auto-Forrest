@@ -2,13 +2,13 @@ const Enemy = require("./enemy");
 
 const WIDTH = 42;
 const HEIGHT = 22;
-const BUFFER = 50; //space between enemies
+const BUFFER = 60; //space between enemies
 
 class Rat extends Enemy {
 
-    constructor(pos) {
-        //health: 10, hitChance: .5, damage: 3, armor: 0, pos: pos, name: Rat, moveSpeed: 10, xpGranted: 10
-        super(10,.5,3,0,pos,"Rat",10,10);
+    constructor() {
+        //health: 10, hitChance: .5, damage: 3, armor: 0, pos: [650,330], name: Rat, moveSpeed: 10, xpGranted: 10
+        super(10,.5,3,0,[650,330],"Rat",10,10);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
@@ -32,7 +32,7 @@ class Rat extends Enemy {
             this.die(enemies,player);
         } else if (i === 0 && this.pos[0] <= 100) {
             this.animateAttack();
-        } else if (i > 0 && enemies[i-1].pos[0] > enemies[i].pos[0] + BUFFER) {
+        } else if ((i === 0 && this.pos[0] > 100) || enemies[i-1].pos[0] < this.pos[0] - BUFFER) {
             this.walk();
         } else {
             this.idle();
@@ -64,7 +64,7 @@ class Rat extends Enemy {
 
             //remove the rat from enemies once it's death animation ends
             //this.dieIndex = 0;
-            console.log(`The rat dies granting ${this.xpGranted} xp`);
+            console.log(`The ${this.name} dies granting ${this.xpGranted} xp`);
             this.grantXP(player);
             enemies.shift();
         }
