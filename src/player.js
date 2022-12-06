@@ -19,8 +19,6 @@ class Player extends Character {
         
         this.idleLoop = [1,2,3,4];
         this.idleIndex = 0;
-
-        console.log(this);
     }
 
     animateAttack() {

@@ -6,12 +6,13 @@ const ItemManager = require("./item_manager.js");
 const Satyr = require("./satyr.js");
 const RedOgre = require("./red_ogre.js");
 const Werewolf = require("./werewolf.js");
+const Util = require("./util.js");
 
 const DIM_X = 700; //canvas width
 const DIM_Y = 400; //canvas height
 const DIV = 100; //X value that enemies cannot cross;
 const BUFFER = 50; //space between enemies
-const SPAWN_DELAY = 20; //ammount of time it takes an enemy to spawn
+const SPAWN_DELAY = 50; //ammount of calls it takes an enemy to spawn
 
 class Game {
 
@@ -85,8 +86,28 @@ class Game {
 
     //create a new enemy every SPAWN_DELAY frames
     spawnAnEnemy() {
+
+        //enemy type depends on player level
+        let enemy;
+        let randomNum = Util.getRandomInt(0,Math.floor(this.player.level/2));
+        switch(randomNum) {
+            case 0:
+                enemy = new Rat();
+                break;
+            case 1:
+                enemy = new Satyr();
+                break;
+            case 2:
+                enemy = new RedOgre();
+                break;
+            case 3:
+                enemy = new Werewolf();
+                break;
+            default:
+                enemy = new Rat();
+        }
+
         if (this.spawnTimer < 1) {
-            let enemy = new Werewolf();
             this.enemies.push(enemy);
             this.spawnTimer = SPAWN_DELAY;
         } else {
