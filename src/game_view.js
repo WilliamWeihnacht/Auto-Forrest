@@ -5,7 +5,6 @@ class GameView {
         this.frame = 0;
         this.ctx = ctx;
         this.paused = false;
-        this.spedUp = false;
         this.frameCap = 10;
         this.game = new Game(this);
     }
@@ -32,12 +31,6 @@ class GameView {
 
     slideSpeed(speed) {
         this.frameCap = speed;
-    }
-
-    toggleSpeed() {
-        this.spedUp ? this.frameCap *= 2 : this.frameCap /= 2;
-        this.spedUp = !this.spedUp;
-        //document.getElementById("speed-button").innerHTML //todo change text to match
     }
 }
 

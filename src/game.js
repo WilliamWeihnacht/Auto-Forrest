@@ -156,48 +156,76 @@ class Game {
         this.player.xp = 0;
 
         //give player full health on level up
-        // this.player.currHealth = this.player.maxHealth;
-        // this.player.healthBar.setHealth(this.player.maxHealth);
+        //this.player.currHealth = this.player.maxHealth;
+        //this.player.healthBar.setHealth(this.player.maxHealth);
 
         this.gameView.pause();
-
-        const overlay = document.getElementById("overlay");
         
-        let items = this.itemManager.get3RandomItems();
+        let threeItems = this.itemManager.get3RandomItems();
+        console.log(threeItems);
 
         //display item images
-        document.getElementById("item1-pic").src = items[0].img;
-        document.getElementById("item2-pic").src = items[1].img;
-        document.getElementById("item3-pic").src = items[2].img;
+        document.getElementById("item1-pic").src = threeItems[0].img;
+        document.getElementById("item2-pic").src = threeItems[1].img;
+        document.getElementById("item3-pic").src = threeItems[2].img;
 
         //name item buttons appropriately
-        document.getElementById("item1-button").innerHTML = items[0].name;
-        document.getElementById("item2-button").innerHTML = items[1].name;
-        document.getElementById("item3-button").innerHTML = items[2].name;
-
-        //show the items overlay
-        overlay.style.display = "block";
-
-        function itemChosen(item) {
-            item.applyStats(this.player);
-            overlay.style.display = "none";
-            this.gameView.play();
-        }
-
         const button1 = document.getElementById("item1-button");
-        button1.addEventListener("click",()=>{
-            itemChosen.bind(this)(items[0]);
+        button1.innerHTML = threeItems[0].name;
+        button1.addEventListener("click",(e)=>{
+            //e.stopImmediatePropagation();
+            console.log("B1 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            console.log(threeItems[0]);
+            console.log(threeItems);
+            console.log(this);
+            overlay.style.display = "none";
+            threeItems[0].applyStats(this.player);
+            this.gameView.play();
         });
 
         const button2 = document.getElementById("item2-button");
-        button2.addEventListener("click",()=>{
-            itemChosen.bind(this)(items[1]);
+        button2.innerHTML = threeItems[1].name;
+        button2.addEventListener("click",(e)=>{
+            e.stopImmediatePropagation();
+            console.log("B2 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            console.log(threeItems[1]);
+            overlay.style.display = "none";
+            threeItems[1].applyStats(this.player);
+            this.gameView.play();
         });
 
         const button3 = document.getElementById("item3-button");
-        button3.addEventListener("click",()=>{
-            itemChosen.bind(this)(items[2]);
+        button3.innerHTML = threeItems[2].name;
+        button3.addEventListener("click",(e)=>{
+            e.stopImmediatePropagation();
+            console.log("B3 CLICKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            console.log(threeItems[2]);
+            overlay.style.display = "none";
+            threeItems[2].applyStats(this.player);
+            this.gameView.play();
         });
+
+        //show the items overlay
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "block";
+
+        // function itemChosen(item) {
+        //     item.applyStats(this.player);
+        //     overlay.style.display = "none";
+        //     this.gameView.play();
+        // }
+
+        
+        // button1.addEventListener("click",()=>{
+        //     itemChosen.bind(this)(items[0]);
+        // });
+
+        
+
+        
+        
+
+        
     }
 
 }
