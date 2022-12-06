@@ -8,6 +8,9 @@ window.ctx = ctx;
 
 const gameView = new GameView(ctx);
 
-document.getElementById("speed-button").addEventListener("click",gameView.toggleSpeed.bind(gameView));
-
+//document.getElementById("speed-button").addEventListener("click",gameView.toggleSpeed.bind(gameView));
+const slider = document.getElementById("speed-slider")
+slider.addEventListener("change",()=>{
+    gameView.slideSpeed(slider.value);
+});
 window.requestAnimationFrame(()=>gameView.step());

@@ -30,6 +30,10 @@ class GameView {
         this.paused = false;
     }
 
+    slideSpeed(speed) {
+        this.frameCap = speed;
+    }
+
     toggleSpeed() {
         this.spedUp ? this.frameCap *= 2 : this.frameCap /= 2;
         this.spedUp = !this.spedUp;
