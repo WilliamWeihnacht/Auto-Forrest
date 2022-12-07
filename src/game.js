@@ -75,6 +75,7 @@ class Game {
 
     //step the game logic by one frame
     step() {
+        this.updateStatDisplay();
         this.spawnAnEnemy();
         this.moveEnemies();
         this.resolveAttacks();
@@ -201,6 +202,17 @@ class Game {
 
         button3.removeEventListener("click",this.event3);
         button3.addEventListener("click",this.event3);
+    }
+
+    updateStatDisplay() {
+        document.getElementById("player-name").innerHTML = `Name: ${this.player.name}`;
+        document.getElementById("player-level").innerHTML = `Level: ${this.player.level}`;
+        document.getElementById("player-xp").innerHTML = `XP: ${this.player.xp}/100`;
+        document.getElementById("player-health").innerHTML = `Health: ${this.player.currHealth}/${this.player.maxHealth}`;
+        document.getElementById("player-hitchance").innerHTML = `Hit Chance: ${this.player.hitChance}`;
+        document.getElementById("player-damage").innerHTML = `Damage: ${this.player.damage}`;
+        document.getElementById("player-armor").innerHTML = `Armor: ${this.player.armor}`;
+        document.getElementById("player-lifesteal").innerHTML = `Life Steal: ${this.player.lifeSteal}`;
     }
 
 }

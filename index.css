@@ -34,4 +34,75 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    border: 3px;
+    border-color: brown;
+    border-style: solid;
+}
+
+#game-container {
+    margin: auto;
+    height: 130%;
+    width: 80%;
+    padding-top: 0;
+    margin-top: 0;
+    border-left: 2px;
+    border-right: 2px;
+    border-style: solid;
+    border-color: white;
+    background-color: black;
+}
+
+#slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#speed-slider {
+    width: 62%;
+    direction: rtl;
+}
+
+#speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('/Users/wwhynot/Documents/AA homework/JS-Project/assets/clock.jpeg');
+    cursor: pointer;
+}
+
+input[type=range] {
+    overflow: hidden;
+    -webkit-appearance: none;
+    background-color: #9a905d;
+}
+
+#player-stats {
+    margin: auto;
+    width: 70%;
+    height: 375px;
+    text-align: center;
+    font-family: fantasy;
+    /* font-family: 'Common Pixel', sans-serif;
+    font-smooth: never;
+    -webkit-font-smoothing : none; */
+    background-image: url("/Users/wwhynot/Documents/AA homework/JS-Project/assets/scroll.png");
+    background-size: cover;
+    /* background-color: brown;
+    color: white; */
+}
+
+#player-stats-list {
+    padding-top: 95px;
+}
+
+body {
+    height: 100%;
+    background-image: url("/Users/wwhynot/Documents/AA homework/JS-Project/assets/Dungeons Walls.png");
+}
+
+html {
+    height: 100%;
 }
