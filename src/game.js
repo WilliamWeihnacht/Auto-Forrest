@@ -1,7 +1,5 @@
 const Player = require("./player.js");
-const Enemy = require("./enemy.js");
 const Rat = require("./rat.js");
-const HealthBar = require("./healthbar");
 const ItemManager = require("./item_manager.js");
 const Satyr = require("./satyr.js");
 const RedOgre = require("./red_ogre.js");
@@ -36,6 +34,7 @@ class Game {
         //allows pause/speed up from within game class
         this.gameView = gameView;
 
+        //the code below is necessary for removing/adding event listeners in the levelUp function
         function itemChosen(item) {
             item.applyStats(this.player);
             document.getElementById("overlay").style.display = "none";
@@ -60,7 +59,7 @@ class Game {
         ctx.drawImage(this.bg4,0,0,DIM_X,DIM_Y);
 
         //draw player
-        this.player.healthBar.draw(this.player.pos);
+        this.player.healthBar.draw([this.player.pos[0]+25,this.player.pos[1]+30]);
         if (this.canFight()) {
             this.player.animateAttack();
         } else {
@@ -160,7 +159,9 @@ class Game {
 
     gameOver() {
         this.gameView.pause();
-        alert("game over");
+        document.getElementById("overlay-options").style.display = "none";
+        document.getElementById("overlay-end").style.display = "block";
+        document.getElementById("overlay").style.display = "block";       
     }
 
     levelUp() {

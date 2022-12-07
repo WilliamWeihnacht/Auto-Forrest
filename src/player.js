@@ -7,7 +7,7 @@ class Player extends Character {
 
     constructor(name = "Player") {
         //health: 200, hitChance: .7, damage: 5, armor: 0, pos: [20,290]
-        super(200,.7,5,0,[20,290],name);
+        super(200,.7,5,0,[10,270],name);
         this.level = 0;
         this.xp = 0;
         
@@ -22,13 +22,13 @@ class Player extends Character {
     }
 
     animateAttack() {
-        ctx.drawImage(this.sprite,WIDTH*this.attackLoop[this.attackIndex],HEIGHT,WIDTH,HEIGHT,this.pos[0],this.pos[1],WIDTH,HEIGHT);
+        ctx.drawImage(this.sprite,WIDTH*this.attackLoop[this.attackIndex],HEIGHT,WIDTH,HEIGHT,this.pos[0],this.pos[1],WIDTH*1.5,HEIGHT*1.5);
         this.attackIndex++;
         if (this.attackIndex >= this.attackLoop.length) this.attackIndex = 0;
     }
 
     animateIdle() {
-        ctx.drawImage(this.sprite,WIDTH*this.idleLoop[this.idleIndex],0,WIDTH,HEIGHT,this.pos[0],this.pos[1],WIDTH,HEIGHT);
+        ctx.drawImage(this.sprite,WIDTH*this.idleLoop[this.idleIndex],0,WIDTH,HEIGHT,this.pos[0],this.pos[1],WIDTH*1.5,HEIGHT*1.5);
         this.idleIndex++;
         if (this.idleIndex >= this.idleLoop.length) this.idleIndex = 0;
     }

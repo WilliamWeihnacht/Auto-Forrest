@@ -8,7 +8,7 @@ class Rat extends Enemy {
 
     constructor() {
         //health: 10, hitChance: .5, damage: 3, armor: 0, pos: [650,330], name: Rat, moveSpeed: 10, xpGranted: 10
-        super(10,.5,3,0,[650,330],"Rat",10,10);
+        super(10,.5,3,0,[650,350],"Rat",10,10);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";

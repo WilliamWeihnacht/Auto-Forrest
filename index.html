@@ -14,7 +14,6 @@
     <div id="game-container">
         <canvas id="game-canvas"></canvas>
         <div id="slider-container">
-            <label for="speed-slider"></label>
             <input type="range" min="1" max="15" class="slider" id="speed-slider">
         </div>
         <div id="player-stats">
@@ -29,9 +28,26 @@
                 <li id="player-lifesteal">Life Steal: </li>
             </ul>
         </div>
+        <div id="socials">
+            <a href="https://www.linkedin.com/in/william-weihnacht/" target="_blank"><img src="/Users/wwhynot/Documents/AA homework/JS-Project/assets/socials/linkedin_logo.png" id="linkedin"></a>
+            <a href="https://github.com/WilliamWeihnacht" target="_blank"><img src="/Users/wwhynot/Documents/AA homework/JS-Project/assets/socials/github_logo.png" id="github"></a>
+        </div>
     </div>
     <div id="overlay">
-        <div id="overlay-options">
+        <div class="overlay-div" id="overlay-instructions">
+            <h1>Instructions</h1>
+            <p>Your character (the knight) will automatically fight the enemies coming from the right. Upon defeating enough enemies they will level up, allowing you to choose an upgrade. 
+                Upon reaching level 15 you will fight the final boss. You may control the game speed using the slider under the game window. Your current stats are shown below the game.</p>
+            <!-- <input type="text"> -->
+            <button id="instructions-button">Continue</button>
+        </div>
+        <div class="overlay-div" id="overlay-end">
+            <!-- <h2>Game Over</h2> -->
+            <img src="/Users/wwhynot/Documents/AA homework/JS-Project/assets/game-over.png">
+            <br>
+            <button id="restart-button">Restart</button>
+        </div>
+        <div class="overlay-div" id="overlay-options">
             <ul>
                 <li id="item1">
                     <img id="item1-pic" src="/Users/wwhynot/Documents/AA homework/JS-Project/assets/items/Rogue Like Items/item_5.png" width="75" height="75">
