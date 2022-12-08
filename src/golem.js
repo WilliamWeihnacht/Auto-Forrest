@@ -7,8 +7,8 @@ const BUFFER = 60;
 class Golem extends Enemy {
 
     constructor() {
-        //health: 100, hitChance: .9, damage: 30, armor: 5, pos: [], name: Golem, moveSpeed: 10, xpGranted: 0
-        super(50,.9,30,20,[650,280],"Golem",10,0);
+        //health: 50, hitChance: .8, damage: 25, armor: 8, pos: [], name: Golem, moveSpeed: 10, xpGranted: 0
+        super(50,.8,25,8,[650,280],"Golem",10,0);
 
         this.sprite = new Image();
         this.sprite.src = "./images/enemy/monsters/Golem/golem-Sheet.png";
