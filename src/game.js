@@ -29,7 +29,7 @@ class Game {
         this.bg4 = new Image();
         this.bg1.src = "./images/background/DarkForest/DarkForest_Background.png";
         this.bg2.src = "./images/background/DarkForest/DarkForest_Middleground.png";
-        this.bg3.src = "./images/background/DarkForest/DarkForest_shadow.png";
+        this.bg3.src = "./images/background/DarkForest/DarkForest_Shadow.png";
         this.bg4.src = "./images/background/DarkForest/DarkForest_Foreground.png";
         this.spawnTimer = SPAWN_DELAY;
 
