@@ -1,6 +1,11 @@
-Description:
+link: https://williamweihnacht.github.io/Autobattler-js-project/
 
+Description:
 This project is a rougelike autobattler. The idea is that there will be a charecter representing the player that fights waves of enemies automatically. Periodically the player will have a choice of a few power-ups to improve their charecters/stats or abilites. As the game progresses the enemies will also get more difficult. I plan on starting with 3 levels.
+
+Instructions:
+Your character (the knight) will automatically fight the enemies coming from the right. Upon defeating enough enemies they will level up, allowing you to choose an upgrade. 
+Upon reaching level 10 you will fight the final boss. You may control the game speed using the slider under the game window. Your current stats are shown below the game.
 
 In autobattler(official name tbd), users will be able to:
 
@@ -18,8 +23,7 @@ Layout:
 https://wireframe.cc/pro/pp/5e8104bca609450
 
 Technologies, Libraries, APIs:
-I'm planning on using a library to help with sprites such as Pixi.js
-Otherwise just canvas I think
+just canvas and javascript
 
 Implementation Timeline
 Friday Afternoon & Weekend: get core game loop running (enemies spawn and fight the charecter)
@@ -27,3 +31,8 @@ Monday: Add/animate sprites
 Tuesday: add power ups
 Wednesday: Add stuff like interface, instructions, link to my website, fastforward button, maybe sounds if I have time
 Thursday Morning: polish and finalize
+
+Future features/todos:
+Music
+Name the character
+Title graphic
