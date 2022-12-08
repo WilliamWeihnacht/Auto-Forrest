@@ -167,8 +167,8 @@ class Game {
             if (this.player.attackHits()) this.player.attack(this.enemies[0]);
 
             //enemy attacks
-            // if (this.enemies[0].attackHits()) console.log(`${this.enemies[0].name} deals ${this.enemies[0].attack(this.player)} damage!`);
-            if (this.enemies[0].attackHits()) this.enemies[0].attack(this.player);
+            if (this.enemies[0].attackHits()) console.log(`${this.enemies[0].name} deals ${this.enemies[0].attack(this.player)} damage!`);
+            // if (this.enemies[0].attackHits()) this.enemies[0].attack(this.player);
 
             //kill player if their health goes sub 0
             //enemy health handled in their draw method
@@ -240,7 +240,7 @@ class Game {
     }
 
     updateStatDisplay() {
-        document.getElementById("player-name").innerHTML = `Name: ${this.player.name}`;
+        // document.getElementById("player-name").innerHTML = `Name: ${this.player.name}`;
         document.getElementById("player-level").innerHTML = `Level: ${this.player.level}`;
         document.getElementById("player-xp").innerHTML = `XP: ${this.player.xp}/100`;
         document.getElementById("player-health").innerHTML = `Health: ${this.player.currHealth}/${this.player.maxHealth}`;

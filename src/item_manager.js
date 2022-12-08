@@ -23,6 +23,9 @@ class ItemManager {
 
         const lifeStealUp = new Item(0,0,0,0,0.1,"Lifesteal Up","./assets/items/lifesteal.png");
         this.items.push(lifeStealUp);
+
+        const lsUpHpDown = new Item(-50,0,0,0,0.2,"Lifesteal +2/HP -1","./assets/items/ls2hp-1.png");
+        this.items.push(lsUpHpDown);
         
         // const item = new Item(0,0,0,0,0,"","");
         // this.items.push(item);

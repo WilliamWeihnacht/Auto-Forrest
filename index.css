@@ -60,7 +60,7 @@ div.overlay-div {
 }
 
 #overlay-end img {
-    width: 270px;
+    width: 200px;
     height: auto;
 }
 
@@ -74,8 +74,8 @@ div.overlay-div {
 }
 
 #overlay-win img {
-    width: 250px;
-    height: auto;
+    width: auto;
+    height: 160px;
 }
 
 #overlay-options {

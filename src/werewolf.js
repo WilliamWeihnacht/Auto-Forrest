@@ -7,8 +7,8 @@ const BUFFER = 60;
 class Werewolf extends Enemy {
 
     constructor() {
-        //health: 30, hitChance: .6, damage: 10, armor: 1, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
-        super(30,.8,7,0,[650,300],"Werewolf",10,30);
+        //health: 30, hitChance: .8, damage: 10, armor: 1, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
+        super(30,.8,15,1,[650,300],"Werewolf",10,30);
         this.lifeSteal = .25;
 
         this.sprite = new Image();

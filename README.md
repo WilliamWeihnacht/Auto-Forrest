@@ -8,7 +8,7 @@ In autobattler(official name tbd), users will be able to:
 choose between items/upgrades
 speed up time
 examine the current stats/items of your charecter
-name and maybe customize the charecter
+Final boss after a certain amount of waves
 In addition, this project will include:
 
 { 2-4 other aspects of your project, including instructions & README }
