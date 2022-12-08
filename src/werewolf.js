@@ -7,9 +7,9 @@ const BUFFER = 60;
 class Werewolf extends Enemy {
 
     constructor() {
-        //health: 20, hitChance: .8, damage: 7, armor: 0, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
+        //health: 20, hitChance: .6, damage: 10, armor: 1, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
         super(20,.8,7,0,[650,300],"Werewolf",10,30);
-        this.lifeSteal = .2;
+        this.lifeSteal = .25;
 
         this.sprite = new Image();
         this.sprite.src = "./assets/enemy/Monster Pack 2.4/Werewolf/werewolf-Sheet.png";

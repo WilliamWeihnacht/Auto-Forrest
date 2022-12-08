@@ -102,7 +102,7 @@ class Game {
     spawnAnEnemy() {
 
         //spawn final boss
-        if (this.player.level === 15) {
+        if (this.player.level === 10) {
             if (!this.fbSpawned) {
                 let fb = new Golem();
                 this.enemies.push(fb);
@@ -116,18 +116,27 @@ class Game {
 
         //enemy type is random but depends on player level
         let enemy;
-        let randomNum = Util.getRandomInt(0,Math.floor(this.player.level/2));
+        let min = Math.max(this.player.level-3,0);
+        let max = this.player.level;
+        let randomNum = Util.getRandomInt(min,max);
         switch(randomNum) {
             case 0:
                 enemy = new Rat();
                 break;
             case 1:
+            case 2:
+            case 3:
                 enemy = new Satyr();
                 break;
-            case 2:
+            case 4:
+            case 5:
+            case 6:
                 enemy = new RedOgre();
                 break;
-            case 3:
+
+            case 7:
+            case 8:
+            case 9:
                 enemy = new Werewolf();
                 break;
             default:

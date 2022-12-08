@@ -7,7 +7,7 @@ const BUFFER = 60;
 class Satyr extends Enemy {
 
     constructor() {
-        //health: 15, hitChance: .7, damage: 5, armor: 0, pos: [], name: Satyr, moveSpeed: 10, xpGranted: 15
+        //health: 15, hitChance: .7, damage: 8, armor: 0, pos: [], name: Satyr, moveSpeed: 10, xpGranted: 30
         super(15,.7,5,0,[650,300],"Satyr",10,15);
 
         this.sprite = new Image();
