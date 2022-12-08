@@ -7,9 +7,9 @@ const BUFFER = 60;
 class Werewolf extends Enemy {
 
     constructor() {
-        //health: 30, hitChance: .8, damage: 15, armor: 0, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
-        super(30,.8,15,0,[650,300],"Werewolf",10,20);
-        this.lifeSteal = .3;
+        //health: 20, hitChance: .8, damage: 7, armor: 0, pos: [], name: Werewolf, moveSpeed: 10, xpGranted: 30
+        super(20,.8,7,0,[650,300],"Werewolf",10,30);
+        this.lifeSteal = .2;
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Werewolf/werewolf-Sheet.png";
@@ -28,7 +28,7 @@ class Werewolf extends Enemy {
     }
 
     draw(enemies,i,player) {
-        this.healthBar.draw(this.pos);
+        this.healthBar.draw([this.pos[0]+50,this.pos[1]-5]);
         if (this.currHealth <= 0) {
             this.die(enemies,player);
         } else if (i === 0 && this.pos[0] <= 100) {

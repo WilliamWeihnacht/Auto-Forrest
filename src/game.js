@@ -5,6 +5,7 @@ const Satyr = require("./satyr.js");
 const RedOgre = require("./red_ogre.js");
 const Werewolf = require("./werewolf.js");
 const Util = require("./util.js");
+const Golem = require("./golem.js");
 
 const DIM_X = 700; //canvas width
 const DIM_Y = 400; //canvas height
@@ -19,6 +20,7 @@ class Game {
         this.enemies = [];
         this.itemManager = new ItemManager();
         this.combatCounter = 0;
+        this.fbSpawned = false;
 
         //load background imgs
         this.bg1 = new Image();
@@ -65,7 +67,7 @@ class Game {
         } else {
             this.player.animateIdle();
         }
-        
+    
         //draw enemies
         for (let i = 0; i < this.enemies.length; i++) {
             this.enemies[i].draw(this.enemies,i,this.player);
@@ -99,7 +101,17 @@ class Game {
     //create a new enemy every SPAWN_DELAY frames
     spawnAnEnemy() {
 
-        //enemy type depends on player level
+        //spawn final boss
+        if (this.player.level === 15) {
+            if (!this.fbSpawned) {
+                let fb = new Golem();
+                this.enemies.push(fb);
+                this.fbSpawned = true;
+            }
+            return;
+        }
+
+        //enemy type is random but depends on player level
         let enemy;
         let randomNum = Util.getRandomInt(0,Math.floor(this.player.level/2));
         switch(randomNum) {
