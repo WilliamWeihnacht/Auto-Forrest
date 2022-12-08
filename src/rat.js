@@ -7,7 +7,7 @@ const BUFFER = 60; //space between enemies
 class Rat extends Enemy {
 
     constructor() {
-        //health: 10, hitChance: .5, damage: 3, armor: 0, pos: [650,330], name: Rat, moveSpeed: 10, xpGranted: 20
+        //health: 10, hitChance: .6, damage: 5, armor: 0, pos: [650,330], name: Rat, moveSpeed: 10, xpGranted: 20
         super(10,.5,3,0,[650,350],"Rat",10,20);
 
         this.sprite = new Image();

@@ -24,7 +24,8 @@ div.overlay-div {
 }
 
 #overlay button {
-    background-color: #f4511e;
+    /* background-color: #f4511e; */
+    background-color: brown;
     border: none;
     color: white;
     padding: 16px 32px;
