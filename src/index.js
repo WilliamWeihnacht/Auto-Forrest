@@ -22,6 +22,10 @@ document.getElementById("restart-button").addEventListener("click",()=>{
     window.location.reload();
 });
 
+document.getElementById("restart-button2").addEventListener("click",()=>{
+    document.getElementById("overlay-win").style.display = "none";
+    window.location.reload();
+});
 
 const slider = document.getElementById("speed-slider")
 slider.addEventListener("change",()=>{

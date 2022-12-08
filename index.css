@@ -44,6 +44,20 @@ div.overlay-div {
     height: auto;
 }
 
+#overlay-win {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 250px;
+    text-align: center;
+    display: none;
+}
+
+#overlay-win img {
+    width: 270px;
+    height: auto;
+}
+
 #overlay-options {
     display: none; /*switches to flex*/
     justify-content: space-evenly;

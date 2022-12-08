@@ -108,6 +108,9 @@ class Game {
                 this.enemies.push(fb);
                 this.fbSpawned = true;
             }
+
+            if (this.enemies.length === 0) this.youWin();
+
             return;
         }
 
@@ -174,6 +177,14 @@ class Game {
         document.getElementById("overlay-options").style.display = "none";
         document.getElementById("overlay-end").style.display = "block";
         document.getElementById("overlay").style.display = "block";       
+    }
+
+    youWin() {
+        this.gameView.pause();
+        // alert("You Win!");
+        document.getElementById("overlay-options").style.display = "none";
+        document.getElementById("overlay-win").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
     }
 
     levelUp() {

@@ -8,7 +8,7 @@ class Satyr extends Enemy {
 
     constructor() {
         //health: 15, hitChance: .7, damage: 5, armor: 0, pos: [], name: Satyr, moveSpeed: 10, xpGranted: 15
-        super(15,.7,5,0,[650,310],"Satyr",10,15);
+        super(15,.7,5,0,[650,300],"Satyr",10,15);
 
         this.sprite = new Image();
         this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Satyr/satyr-Sheet.png";
