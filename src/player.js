@@ -12,7 +12,7 @@ class Player extends Character {
         this.xp = 0;
         
         this.sprite = new Image();
-        this.sprite.src = "./images/player/Animated Pixel Knight/knight-sprite-sheet.png";
+        this.sprite.src = "./images/player/AnimatedPixelKnight/knight-sprite-sheet.png";
 
         this.attackLoop = [0,1,2,3,4];
         this.attackIndex = 0;

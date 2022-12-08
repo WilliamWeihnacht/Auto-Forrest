@@ -11,7 +11,7 @@ class Satyr extends Enemy {
         super(15,.7,5,0,[650,300],"Satyr",10,15);
 
         this.sprite = new Image();
-        this.sprite.src = "./images/enemy/Monster Pack 2.4/Satyr/satyr-Sheet.png";
+        this.sprite.src = "./images/enemy/monsters/Satyr/satyr-Sheet.png";
 
         this.walkLoop = [0,1,2,3,4];
         this.walkIndex = 0;
