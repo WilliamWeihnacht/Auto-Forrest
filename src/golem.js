@@ -11,7 +11,7 @@ class Golem extends Enemy {
         super(50,1,10,5,[650,280],"Golem",10,0);
 
         this.sprite = new Image();
-        this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Golem/golem-Sheet.png";
+        this.sprite.src = "./assets/enemy/Monster Pack 2.4/Golem/golem-Sheet.png";
 
         this.walkLoop = [0,1,2,3,4];
         this.walkIndex = 0;

@@ -27,10 +27,10 @@ class Game {
         this.bg2 = new Image();
         this.bg3 = new Image();
         this.bg4 = new Image();
-        this.bg1.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/background/DarkForest/DarkForest_Background.png";
-        this.bg2.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/background/DarkForest/DarkForest_Middleground.png";
-        this.bg3.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/background/DarkForest/DarkForest_shadow.png";
-        this.bg4.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/background/DarkForest/DarkForest_Foreground.png";
+        this.bg1.src = "./assets/background/DarkForest/DarkForest_Background.png";
+        this.bg2.src = "./assets/background/DarkForest/DarkForest_Middleground.png";
+        this.bg3.src = "./assets/background/DarkForest/DarkForest_shadow.png";
+        this.bg4.src = "./assets/background/DarkForest/DarkForest_Foreground.png";
         this.spawnTimer = SPAWN_DELAY;
 
         //allows pause/speed up from within game class

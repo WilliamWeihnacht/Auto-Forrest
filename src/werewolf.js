@@ -12,7 +12,7 @@ class Werewolf extends Enemy {
         this.lifeSteal = .2;
 
         this.sprite = new Image();
-        this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Werewolf/werewolf-Sheet.png";
+        this.sprite.src = "./assets/enemy/Monster Pack 2.4/Werewolf/werewolf-Sheet.png";
 
         this.walkLoop = [0,1,2,3,4];
         this.walkIndex = 0;

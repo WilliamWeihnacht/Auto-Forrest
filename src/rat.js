@@ -11,7 +11,7 @@ class Rat extends Enemy {
         super(10,.5,3,0,[650,350],"Rat",10,10);
 
         this.sprite = new Image();
-        this.sprite.src = "/Users/wwhynot/Documents/AA homework/JS-Project/assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
+        this.sprite.src = "./assets/enemy/Monster Pack 2.4/Rat/rat-Sheet.png";
 
         this.walkLoop = [0,1,2,3];
         this.walkIndex = 0;
