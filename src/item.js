@@ -19,7 +19,7 @@ class Item {
         player.hitChance += this.hitChanceGranted;
         player.armor += this.armorGranted;
         player.lifeSteal += this.lifeStealGranted;
-        console.log(`${player.name} chose ${this.name}`);
+        // console.log(`${player.name} chose ${this.name}`);
     }
 }
 

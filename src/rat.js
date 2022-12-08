@@ -64,7 +64,7 @@ class Rat extends Enemy {
 
             //remove the rat from enemies once it's death animation ends
             //this.dieIndex = 0;
-            console.log(`The ${this.name} dies granting ${this.xpGranted} xp`);
+            // console.log(`The ${this.name} dies granting ${this.xpGranted} xp`);
             this.grantXP(player);
             enemies.shift();
         }

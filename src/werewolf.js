@@ -66,7 +66,7 @@ class Werewolf extends Enemy {
         this.dieIndex++
         if (this.dieIndex >= this.dieLoop.length) {
             //this.dieIndex = 0;
-            console.log(`The ${this.name} dies granting ${this.xpGranted} xp`);
+            // console.log(`The ${this.name} dies granting ${this.xpGranted} xp`);
             this.grantXP(player);
             enemies.shift();
         }

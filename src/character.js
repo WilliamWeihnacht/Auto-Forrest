@@ -32,7 +32,7 @@ class Character {
             this.currHealth += hp;
             this.healthBar.addHealth(hp);
         }
-        if (hp > 0) console.log(`${this.name} heals for ${hp}.`);
+        //if (hp > 0) console.log(`${this.name} heals for ${hp}.`);
     }
 
     takeDamage(dmg) {
@@ -44,7 +44,7 @@ class Character {
         if (Math.random() < this.hitChance) {
             return true;
         } else {
-            console.log(`${this.name} misses!`);
+            // console.log(`${this.name} misses!`);
             return false;
         }
     }
