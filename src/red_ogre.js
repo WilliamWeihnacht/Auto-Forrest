@@ -7,8 +7,8 @@ const BUFFER = 60;
 class RedOgre extends Enemy {
 
     constructor() {
-        //health: 25, hitChance: .8, damage: 15, armor: 2, pos: [], name: Red Ogre, moveSpeed: 15, xpGranted: 
-        super(20,.7,10,2,[650,290],"Red Ogre",10,20);
+        //health: 20, hitChance: .8, damage: 10, armor: 2, pos: [], name: Red Ogre, moveSpeed: 15, xpGranted: 
+        super(20,.7,10,2,[650,290],"Red Ogre",10,35);
 
         this.sprite = new Image();
         this.sprite.src = "./images/enemy/monsters/RedOgre/red-ogre-Sheet.png";
