@@ -9,22 +9,22 @@ class ItemManager {
     }
 
     generateItemList() {
-        const hpUp = new Item(50,0,0,0,0,"Health Up","./assets/items/health.png");
+        const hpUp = new Item(50,0,0,0,0,"Health Up","./images/items/health.png");
         this.items.push(hpUp);
 
-        const dmgUp = new Item(0,3,0,0,0,"Damage Up","./assets/items/damage.png");
+        const dmgUp = new Item(0,3,0,0,0,"Damage Up","./images/items/damage.png");
         this.items.push(dmgUp);
 
-        const hitChanceUp = new Item(0,0,.05,0,0,"Hit Chance Up","./assets/items/hitchance.png");
+        const hitChanceUp = new Item(0,0,.05,0,0,"Hit Chance Up","./images/items/hitchance.png");
         this.items.push(hitChanceUp);
 
-        const armorUp = new Item(0,0,0,3,0,"Armor Up","./assets/items/armor.png");
+        const armorUp = new Item(0,0,0,3,0,"Armor Up","./images/items/armor.png");
         this.items.push(armorUp);
 
-        const lifeStealUp = new Item(0,0,0,0,0.1,"Lifesteal Up","./assets/items/lifesteal.png");
+        const lifeStealUp = new Item(0,0,0,0,0.1,"Lifesteal Up","./images/items/lifesteal.png");
         this.items.push(lifeStealUp);
 
-        const lsUpHpDown = new Item(-50,0,0,0,0.2,"Lifesteal +2/HP -1","./assets/items/ls2hp-1.png");
+        const lsUpHpDown = new Item(-50,0,0,0,0.2,"Lifesteal +2/HP -1","./images/items/ls2hp-1.png");
         this.items.push(lsUpHpDown);
         
         // const item = new Item(0,0,0,0,0,"","");

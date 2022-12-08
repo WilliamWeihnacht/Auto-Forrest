@@ -135,7 +135,7 @@ canvas {
     width: 23px;
     height: 24px;
     border: 0;
-    background: url('./assets/squareplusminus.png');
+    background: url('./images/squareplusminus.png');
     background-size:contain;
     cursor: pointer;
 }
@@ -156,7 +156,7 @@ input[type=range] {
     /* font-family: 'Common Pixel', sans-serif;
     font-smooth: never;
     -webkit-font-smoothing : none; */
-    background-image: url("./assets/scroll.png");
+    background-image: url("./images/scroll.png");
     background-size: cover;
     /* background-color: brown;
     color: white; */
@@ -180,7 +180,7 @@ div#socials img {
 
 body {
     height: 100%;
-    background-image: url("./assets/Dungeons Walls.png");
+    background-image: url("./images/Dungeons Walls.png");
 }
 
 html {

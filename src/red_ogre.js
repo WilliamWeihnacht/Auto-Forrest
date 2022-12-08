@@ -11,7 +11,7 @@ class RedOgre extends Enemy {
         super(25,.8,15,2,[650,290],"Red Ogre",10,20);
 
         this.sprite = new Image();
-        this.sprite.src = "./assets/enemy/Monster Pack 2.4/Red Ogre/red-ogre-Sheet.png";
+        this.sprite.src = "./images/enemy/Monster Pack 2.4/Red Ogre/red-ogre-Sheet.png";
 
         this.walkLoop = [0,1,2,3,4];
         this.walkIndex = 0;
