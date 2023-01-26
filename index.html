@@ -11,14 +11,20 @@
 </head>
 <body>
     <div id="game-container">
+        <div id="socials">
+            <a href="https://www.linkedin.com/in/william-weihnacht/" target="_blank"><img src="./images/socials/linkedin_logo.png" id="linkedin"></a>
+            <a href="https://github.com/WilliamWeihnacht" target="_blank"><img src="./images/socials/github_logo.png" id="github"></a>
+        </div>
         <canvas id="game-canvas"></canvas>
         <div id="slider-container">
             <input type="range" min="1" max="15" class="slider" id="speed-slider">
+            <label id="slider-label">Game Speed Slider ⇪</label>
         </div>
         <div id="player-stats">
+            <span id="player-level">Level: </span>
             <ul id="player-stats-list">
                 <!-- <li id="player-name">Name: </li> -->
-                <li id="player-level">Level: </li>
+                <!-- <li id="player-level">Level: </li> -->
                 <li id="player-xp">XP: /100</li>
                 <li id="player-health">Health: /</li>
                 <li id="player-hitchance">Hit Chance: </li>
@@ -26,10 +32,6 @@
                 <li id="player-armor">Armor: </li>
                 <li id="player-lifesteal">Life Steal: </li>
             </ul>
-        </div>
-        <div id="socials">
-            <a href="https://www.linkedin.com/in/william-weihnacht/" target="_blank"><img src="./images/socials/linkedin_logo.png" id="linkedin"></a>
-            <a href="https://github.com/WilliamWeihnacht" target="_blank"><img src="./images/socials/github_logo.png" id="github"></a>
         </div>
     </div>
     <div id="overlay">

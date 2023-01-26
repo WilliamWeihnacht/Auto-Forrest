@@ -16,15 +16,18 @@ div.overlay-div {
     /* display: flex;
     justify-content: space-evenly; */
     width: 500px;
+    /* width: 80%; */
     height: 300px;
     margin: auto;
+    margin-top: 150px;
     background-color: cornsilk;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    /* border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px; */
 }
 
 #overlay button {
     /* background-color: #f4511e; */
+    width: 200px;
     background-color: brown;
     border: none;
     color: white;
@@ -92,6 +95,7 @@ li {
     justify-content: space-evenly;
     /* display: inline; */
     list-style: none;
+    padding: 5px;
 }
 
 canvas {
@@ -106,13 +110,17 @@ canvas {
 }
 
 #game-container {
+    position: relative;
     margin: auto;
-    height: 130%;
+    height: 100%;
     width: 80%;
+    min-width: fit-content;
     padding-top: 0;
     margin-top: 0;
     border-left: 2px;
     border-right: 2px;
+    border-top: 0;
+    border-bottom: 0;
     border-style: solid;
     border-color: white;
     background-color: black;
@@ -122,10 +130,17 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+#slider-label {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #speed-slider {
-    width: 62%;
+    /* width: 62%; */
+    width: 700px;
     direction: rtl;
 }
 
@@ -147,42 +162,59 @@ input[type=range] {
     border-radius: 5px;
 }
 
-#player-stats {
+/* #player-stats {
     margin: auto;
     width: 70%;
     height: 375px;
     text-align: center;
     font-family: fantasy;
-    /* font-family: 'Common Pixel', sans-serif;
-    font-smooth: never;
-    -webkit-font-smoothing : none; */
     background-image: url("./images/scroll.png");
     background-size: cover;
-    /* background-color: brown;
-    color: white; */
+} */
+
+#player-stats {
+    width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: gray;
+    border: 4px outset rgb(110, 110, 110);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+#player-level {
+    display: block;
+    text-align: center;
+    font-size: 24px;
 }
 
 #player-stats-list {
-    padding-top: 95px;
+    /* padding-top: 95px; */
+    column-count: 3;
+
 }
 
 #socials {
+    position: absolute;
+    top: 10px;
     display: flex;
     justify-content:center;
 }
 
 div#socials img {
-    width: 50px;
+    width: 30px;
     height: auto;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 body {
-    height: 100%;
     background-image: url("./images/DungeonsWalls.png");
 }
 
-html {
+html, body {
     height: 100%;
+    overflow: hidden;
+}
+
+ul {
+    padding: 0;
 }
