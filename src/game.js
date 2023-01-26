@@ -192,14 +192,13 @@ class Game {
 
     youWin() {
         this.gameView.pause();
-        // alert("You Win!");
         document.getElementById("overlay-options").style.display = "none";
         document.getElementById("overlay-win").style.display = "block";
         document.getElementById("overlay").style.display = "block";
     }
 
     levelUp() {
-        console.log(`${this.player.name} leveled up!`);
+        // console.log(`${this.player.name} leveled up!`);
         this.player.level++;
         this.player.xp = 0;
 
