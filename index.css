@@ -110,10 +110,13 @@ canvas {
 }
 
 #game-container {
-    position: relative;
-    margin: auto;
+    position: fixed;
+    margin: 0 auto;
+    margin-left: -357px;
     height: 100%;
-    width: 80%;
+    padding: 10px;
+    left: 50%;
+    width: fit-content;
     min-width: fit-content;
     padding-top: 0;
     margin-top: 0;
@@ -124,6 +127,10 @@ canvas {
     border-style: solid;
     border-color: white;
     background-color: black;
+}
+
+#content-container {
+    margin-top: 10%;
 }
 
 #slider-container {
@@ -223,7 +230,9 @@ div#socials img {
 }
 
 body {
+    margin: 0;
     background-image: url("./images/DungeonsWalls.png");
+    max-height: fit-content;
 }
 
 html, body {
