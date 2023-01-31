@@ -130,7 +130,7 @@ canvas {
 }
 
 #content-container {
-    margin-top: 10%;
+    margin-top: 10px;
 }
 
 #slider-container {
@@ -146,7 +146,6 @@ canvas {
 }
 
 #speed-slider {
-    /* width: 62%; */
     width: 700px;
     direction: rtl;
 }
