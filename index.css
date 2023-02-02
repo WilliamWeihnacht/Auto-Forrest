@@ -13,27 +13,25 @@
 }
 
 div.overlay-div {
-    /* display: flex;
-    justify-content: space-evenly; */
-    width: 500px;
-    /* width: 80%; */
-    height: 300px;
+    width: 50vh;
+    height: 35vh;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 20vh;
     background-color: cornsilk;
-    /* border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px; */
+}
+
+#instructions-button {
+    margin-top: 3vh !important;
 }
 
 #overlay button {
-    /* background-color: #f4511e; */
-    width: 200px;
+    width: 20vh;
     background-color: brown;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 2.5vh 5vh;
     text-align: center;
-    font-size: 16px;
+    font-size: 2vh;
     margin: 4px 2px;
     opacity: 0.6;
     transition: 0.3s;
@@ -45,25 +43,37 @@ div.overlay-div {
 #overlay button:hover {opacity: 1}
 
 #overlay-instructions {
-    padding-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 250px;
+    padding-top: 5vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+    height: 35vh;
     text-align: center;
     display: block;
+}
+
+#overlay-instructions h1 {
+    font-size: 3.5vh;
+    margin: 0;
+    padding: 0;
+}
+
+#overlay-instructions p {
+    font-size: 2vh;
+    margin: 0;
+    padding: 0;
 }
 
 #overlay-end {
     padding-top: 30px;
     padding-left: 15px;
     padding-right: 15px;
-    height: 250px;
+    height: 25vh;
     text-align: center;
     display: none;
 }
 
 #overlay-end img {
-    width: 200px;
+    width: 20vh;
     height: auto;
 }
 
@@ -93,9 +103,8 @@ div.overlay-div {
 li {
     display: flex;
     justify-content: space-evenly;
-    /* display: inline; */
     list-style: none;
-    padding: 5px;
+    padding: 1vh;
 }
 
 canvas {
@@ -107,14 +116,17 @@ canvas {
     border: 3px;
     border-color: brown;
     border-style: solid;
+
+    width: 100vh;
+    height: 56vh;
 }
 
 #game-container {
     position: fixed;
     margin: 0 auto;
-    margin-left: -357px;
+    margin-left: -50vh;
     height: 100%;
-    padding: 10px;
+    padding: 1vh;
     left: 50%;
     width: fit-content;
     min-width: fit-content;
@@ -130,7 +142,7 @@ canvas {
 }
 
 #content-container {
-    margin-top: 10px;
+    margin-top: 3vh;
 }
 
 #slider-container {
@@ -143,10 +155,11 @@ canvas {
 #slider-label {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
 }
 
 #speed-slider {
-    width: 700px;
+    width: 100vh;
     direction: rtl;
 }
 
@@ -168,18 +181,9 @@ input[type=range] {
     border-radius: 5px;
 }
 
-/* #player-stats {
-    margin: auto;
-    width: 70%;
-    height: 375px;
-    text-align: center;
-    font-family: fantasy;
-    background-image: url("./images/scroll.png");
-    background-size: cover;
-} */
-
 #player-stats {
-    width: 700px;
+    width: 100vh;
+    height: 15vh;
     margin: auto;
     margin-top: 20px;
     padding: 5px;
@@ -191,13 +195,16 @@ input[type=range] {
 #player-level {
     display: block;
     text-align: center;
-    font-size: 24px;
+    font-size: 3vh;
 }
 
 #player-stats-list {
     /* padding-top: 95px; */
     column-count: 3;
+}
 
+#player-stats-list li {
+    font-size: 2vh;
 }
 
 #socials {
@@ -216,7 +223,7 @@ input[type=range] {
 }
 
 div#socials img {
-    width: 20px;
+    width: 2vh;
     height: auto;
     padding-right: 2px;
 }
@@ -226,6 +233,7 @@ div#socials img {
     text-align: center;
     color: white;
     text-decoration: none;
+    font-size: 2vh;
 }
 
 body {
@@ -240,5 +248,25 @@ html, body {
 }
 
 ul {
+    margin: 0;
     padding: 0;
+}
+
+#item1-pic {
+    width: 10vh;
+    height: 10vh;
+}
+
+#item2-pic {
+    width: 10vh;
+    height: 10vh;
+}
+
+#item3-pic {
+    width: 10vh;
+    height: 10vh;
+}
+
+.item-li {
+    padding: .2vh;
 }
