@@ -5,7 +5,7 @@ This project is a rougelike autobattler. The idea is that there will be a charec
 
 ## How to play:
 
-### 1. Use the game speed slider to speed things up to your desirerd pace.
+### 1. Use the game speed slider to speed things up to your desired pace.
 
 <img width="723" alt="Screen Shot 2023-03-02 at 3 52 36 PM" src="https://user-images.githubusercontent.com/10673921/222592446-fac15322-d3c7-4478-844d-57e5fa028c1c.png">
 
