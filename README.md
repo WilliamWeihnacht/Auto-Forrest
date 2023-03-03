@@ -1,35 +1,21 @@
-link: https://williamweihnacht.github.io/Autobattler-js-project/
+# link: https://williamweihnacht.github.io/Autobattler-js-project/
 
-Description:
+## Description:
 This project is a rougelike autobattler. The idea is that there will be a charecter representing the player that fights waves of enemies automatically. Periodically the player will have a choice of a few power-ups to improve their charecters/stats or abilites. As the game progresses the enemies will also get more difficult. I plan on starting with 3 levels.
 
-Instructions:
-Your character (the knight) will automatically fight the enemies coming from the right. Upon defeating enough enemies they will level up, allowing you to choose an upgrade. 
-Upon reaching level 10 you will fight the final boss. You may control the game speed using the slider under the game window. Your current stats are shown below the game.
+## How to play:
 
-In autobattler(official name tbd), users will be able to:
-choose between items/upgrades
-speed up time
-examine the current stats/items of your charecter
-Final boss after a certain amount of waves
+### 1. Use the game speed slider to speed things up to your desirerd pace.
 
-In addition, this project will include:
-enemies come from the right side of the screen and attack the player, doing damage in a range. The player will automatically fight back. You will be able to give your charecter items periodically, some of which may be able to be combined into stronger items.
+<img width="723" alt="Screen Shot 2023-03-02 at 3 52 36 PM" src="https://user-images.githubusercontent.com/10673921/222592446-fac15322-d3c7-4478-844d-57e5fa028c1c.png">
 
-Layout:
-https://wireframe.cc/pro/pp/5e8104bca609450
+### 2. When you level up, pick an upgrade.
 
-Technologies, Libraries, APIs:
-just canvas and javascript
+<img width="716" alt="Screen Shot 2023-03-02 at 3 54 18 PM" src="https://user-images.githubusercontent.com/10673921/222592819-785dae9e-5639-4381-88d0-fed5b999994f.png">
 
-Implementation Timeline
-Friday Afternoon & Weekend: get core game loop running (enemies spawn and fight the charecter)
-Monday: Add/animate sprites
-Tuesday: add power ups
-Wednesday: Add stuff like interface, instructions, link to my website, fastforward button, maybe sounds if I have time
-Thursday Morning: polish and finalize
+That's about it.
 
-Future features/todos:
-Music
-Name the character
-Title graphic
+## todo list:
+1. add music
+2. add more upgrades
+3. add more enemies
