@@ -41,6 +41,24 @@ The game uses an animation loop meaning that theres a loop which calls on the an
         }
     }
 
+You can see that the player has two animations animateAttack and animateIdle and which one is used is determined based on if there are any enemies in swinging distance. Enemies work similiarly except they have 4 possible animations (attack, idle, walk, and die).
+
+The animations use a sprite sheet with a sliding window. This means that each time an animation function is called it displays a different cut-out of the sprite sheet using a sliding window formula.
+
+'''
+    this.walkLoop = [0,1,2,3];
+    this.walkIndex = 0;
+
+    ...
+    
+    walk() {
+        ctx.drawImage(this.sprite,WIDTH * this.walkLoop[this.walkIndex], HEIGHT, WIDTH, HEIGHT, this.pos[0], this.pos[1], WIDTH*2, HEIGHT*2);
+        this.walkIndex++;
+        if (this.walkIndex >= this.walkLoop.length) this.walkIndex = 0;
+    }
+    
+'''
+
 ## todo list:
 1. add music
 2. add more upgrades
