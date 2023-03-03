@@ -15,6 +15,35 @@ This project is a rougelike autobattler. The idea is that there will be a charec
 
 That's about it.
 
+## How it works
+
+The game uses an animation loop meaning that theres a loop which calls on the animate function for each entity (each enemy and the player) each frame of the game:
+
+'''
+//animate a frame of the game
+draw(ctx) {
+    ctx.clearRect(0,0,DIM_X,DIM_Y);
+
+    //draw background
+    ctx.drawImage(this.bg1,0,0,DIM_X,DIM_Y);
+    ctx.drawImage(this.bg2,0,0,DIM_X,DIM_Y);
+    ctx.drawImage(this.bg4,0,0,DIM_X,DIM_Y);
+
+    //draw player
+    this.player.healthBar.draw([this.player.pos[0]+25,this.player.pos[1]+30]);
+    if (this.canFight()) {
+        this.player.animateAttack();
+    } else {
+        this.player.animateIdle();
+    }
+
+    //draw enemies
+    for (let i = 0; i < this.enemies.length; i++) {
+        this.enemies[i].draw(this.enemies,i,this.player);
+    }
+}
+'''
+
 ## todo list:
 1. add music
 2. add more upgrades
