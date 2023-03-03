@@ -45,7 +45,6 @@ You can see that the player has two animations animateAttack and animateIdle and
 
 The animations use a sprite sheet with a sliding window. This means that each time an animation function is called it displays a different cut-out of the sprite sheet using a sliding window formula.
 
-'''
     this.walkLoop = [0,1,2,3];
     this.walkIndex = 0;
 
@@ -56,8 +55,14 @@ The animations use a sprite sheet with a sliding window. This means that each ti
         this.walkIndex++;
         if (this.walkIndex >= this.walkLoop.length) this.walkIndex = 0;
     }
-    
-'''
+
+this.sprite is the sprite sheet which looks like this:
+
+![rat-Sheet](https://user-images.githubusercontent.com/10673921/222601948-00ef4dc5-6340-42d4-abfd-6b654e1eb3c3.png)
+
+As you can see it has all the animations for the rat which saves space as we only need one image instead of one for each frame or animation.
+
+The drawImage function draws a rectuangular section of the sprite sheet on the canvas and the walkLoop and walkIndex are used to move this rectangle by a fixed offset and display the next frame of the animation on subsequent calls.
 
 ## todo list:
 1. add music
