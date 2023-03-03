@@ -64,6 +64,59 @@ As you can see it has all the animations for the rat which saves space as we onl
 
 The drawImage function draws a rectuangular section of the sprite sheet on the canvas and the walkLoop and walkIndex are used to move this rectangle by a fixed offset and display the next frame of the animation on subsequent calls.
 
+There's also a step function which is responsible for incrementing the game logic. This means handling things like enemies positions and attacks:
+
+    step() {
+        this.updateStatDisplay();
+        this.spawnAnEnemy();
+        this.moveEnemies();
+        this.resolveAttacks();
+        if (this.player.xp >= 100) this.levelUp();
+    }
+
+The level up function was a bit difficult to figure out, as I didn't realize I needed to remove the old event listeners each time. Doing so required making them instance variables as the removeEventListener funtion requires being called on the same exact function that was used to create it.
+
+    levelUp() {
+        // console.log(`${this.player.name} leveled up!`);
+        this.player.level++;
+        this.player.xp = 0;
+
+        //give player full health on level up
+        //this.player.currHealth = this.player.maxHealth;
+        //this.player.healthBar.setHealth(this.player.maxHealth);
+
+        this.gameView.pause();
+        
+        this.threeItems = this.itemManager.get3RandomItems();
+
+        //display item images
+        document.getElementById("item1-pic").src = this.threeItems[0].img;
+        document.getElementById("item2-pic").src = this.threeItems[1].img;
+        document.getElementById("item3-pic").src = this.threeItems[2].img;
+
+        //change button names
+        const button1 = document.getElementById("item1-button");
+        button1.innerHTML = this.threeItems[0].name;
+        const button2 = document.getElementById("item2-button");
+        button2.innerHTML = this.threeItems[1].name;
+        const button3 = document.getElementById("item3-button");
+        button3.innerHTML = this.threeItems[2].name;
+
+        //show the items overlay
+        const overlay = document.getElementById("overlay");
+        overlay.style.display = "block";
+        
+        //give each button a fresh event listener
+        button1.removeEventListener("click",this.event1);
+        button1.addEventListener("click",this.event1);
+        
+        button2.removeEventListener("click",this.event2);
+        button2.addEventListener("click",this.event2);
+
+        button3.removeEventListener("click",this.event3);
+        button3.addEventListener("click",this.event3);
+    }
+
 ## todo list:
 1. add music
 2. add more upgrades
