@@ -19,7 +19,6 @@ That's about it.
 
 The game uses an animation loop meaning that theres a loop which calls on the animate function for each entity (each enemy and the player) each frame of the game:
 
-    '''
     draw(ctx) {
         ctx.clearRect(0,0,DIM_X,DIM_Y);
 
@@ -41,7 +40,6 @@ The game uses an animation loop meaning that theres a loop which calls on the an
             this.enemies[i].draw(this.enemies,i,this.player);
         }
     }
-    '''
 
 ## todo list:
 1. add music
