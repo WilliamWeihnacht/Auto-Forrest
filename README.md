@@ -1,4 +1,4 @@
-# link: https://williamweihnacht.github.io/Autobattler-js-project/
+# link: https://williamweihnacht.github.io/Auto-Forrest/
 
 ## Description:
 This project is a rougelike autobattler. The idea is that there will be a charecter representing the player that fights waves of enemies automatically. Periodically the player will have a choice of a few power-ups to improve their characters stats or abilites. As the game progresses the enemies will also get more difficult.
